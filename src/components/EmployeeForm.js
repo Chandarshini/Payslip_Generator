@@ -108,7 +108,7 @@ function EmployeeForm({ setEmployeeData }) {
       color: "#f5e6a8",
     }}
   >
-    Udaiyampalayam, Coimbatore - 28
+    Udayampalayam, Coimbatore - 28
   </p>
 
   <div
