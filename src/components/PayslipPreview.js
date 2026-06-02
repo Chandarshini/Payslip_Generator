@@ -108,8 +108,7 @@ const thStyle = {
       <div
         id="payslip"
        style={{
-        width: "100%",
-  maxWidth: "794px",
+  width: "794px",
   minHeight: "1123px",
   boxSizing: "border-box",
   padding: "20px",
