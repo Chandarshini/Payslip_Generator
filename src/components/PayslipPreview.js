@@ -1,6 +1,8 @@
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import { toWords } from "number-to-words";
+import companyLogo from "../assets/logo.png";
+import natarajarImg from "../assets/natrajar.png"
 
 function PayslipPreview({ employeeData }) {
   const basicSalary =
@@ -43,7 +45,9 @@ function PayslipPreview({ employeeData }) {
     totalEarnings - totalDeductions;
 
     const salaryInWords =
-  toWords(netSalary);
+  netSalary > 0
+    ? toWords(netSalary)
+    : "Zero";
 
   const downloadPDF = async () => {
   const input = document.getElementById("payslip");
@@ -104,7 +108,8 @@ const thStyle = {
       <div
         id="payslip"
        style={{
-  width: "794px",
+        width: "100%",
+  maxWidth: "794px",
   minHeight: "1123px",
   boxSizing: "border-box",
   padding: "20px",
@@ -115,32 +120,93 @@ const thStyle = {
   fontFamily: "Arial, sans-serif",
 }}
       >
+        
        <div
   style={{
     background: colors.maroon,
     color: "#fff",
     padding: "15px",
     borderRadius: "8px",
-    textAlign: "center",
     marginBottom: "20px",
   }}
 >
-  <h2 style={{ margin: 0 }}>
-    சம்பள சீட்டு / PAY SLIP
-  </h2>
-
-  <h3
+  <div
     style={{
-      marginTop: "8px",
-      color: colors.gold,
+      display: "flex",
+      alignItems: "center",
     }}
   >
-    நந்தா நாட்டியாலயா
-  </h3>
-  
-  <p style={{ margin: 0 }}>
-    உடையாம்பாளையம், கோவை - 28
-  </p>
+      <div
+  style={{
+    width: "125px",
+    height: "125px",
+    background: "#fff",
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginRight: "15px",
+  }}
+>
+  <img
+    src={companyLogo}
+    alt="Logo"
+    style={{
+      width: "100px",
+      height: "100px",
+      objectFit: "contain",
+    }}
+  />
+</div>
+
+    <div
+      style={{
+        flex: 1,
+        textAlign: "center",
+        marginLeft: "-10px",
+      }}
+    >
+
+      <h2
+        style={{
+        fontSize: "35px",
+          marginTop: "15px",
+          color: colors.gold,
+        }}
+      >
+        நந்தா நாட்டியாலயா
+      </h2>
+
+      <h2 style={{ margin: 0,  fontSize: "30px", }}>
+        சம்பள சீட்டு / PAY SLIP
+      </h2>
+
+      {/* <p style={{ margin: 0 }}>
+        உடையாம்பாளையம், கோவை - 28
+      </p> */}
+    </div>
+        <div
+      style={{
+        width: "125px",
+        height: "125px",
+        background: "#fff",
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        src={natarajarImg}
+        alt="Natarajar"
+        style={{
+          width: "100px",
+          height: "100px",
+          objectFit: "contain",
+        }}
+      />
+    </div>
+  </div>
 </div>
 
         {/* Employee Details */}
@@ -201,7 +267,6 @@ const thStyle = {
 
   <table style={tableStyle}>
     {/* KEEP YOUR EXISTING EARNINGS ROWS HERE */}
-    <table style={tableStyle}>
           <tbody>
             <tr>
               <th style={thStyle}>விவரம்</th>
@@ -258,7 +323,6 @@ const thStyle = {
               </td>
             </tr>
           </tbody>
-        </table>
   </table>
 </div>
 <div

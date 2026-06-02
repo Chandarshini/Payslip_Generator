@@ -62,11 +62,18 @@ function EmployeeForm({ setEmployeeData }) {
     paddingBottom: "8px",
   };
 
+  const mobileGrid = {
+  display: "grid",
+  gridTemplateColumns: "1fr",
+  gap: "15px",
+};
+
   return (
     <div
       style={{
-        maxWidth: "1000px",
-        margin: "30px auto",
+         width: "95%",
+        maxWidth: "450px",
+        margin: "15px auto",
         background: "#fff",
         borderRadius: "15px",
         boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
@@ -74,21 +81,63 @@ function EmployeeForm({ setEmployeeData }) {
       }}
     >
       <div
-        style={{
-          background: "#800020",
-          color: "white",
-          padding: "20px",
-          textAlign: "center",
-        }}
-      >
-        <h1 style={{ margin: 0 }}>PAYSLIP GENERATOR</h1>
-        <p style={{ marginTop: "8px" }}>Nandha Natyalaya</p>
-      </div>
+  style={{
+    background: "linear-gradient(135deg, #800020, #5a0016)",
+    color: "#fff",
+    padding: "25px 20px",
+    textAlign: "center",
+    borderBottom: "4px solid #D4AF37",
+    boxShadow: "0 3px 10px rgba(0,0,0,0.15)",
+  }}
+>
+  <h2
+    style={{
+        fontSize: "40px",
+      margin: 0,
+      color: "#D4AF37",
+      letterSpacing: "1px",
+    }}
+  >
+    Nandha Natyalaya
+  </h2>
+
+  <p
+    style={{
+      margin: "5px 0 15px",
+      fontSize: "20px",
+      color: "#f5e6a8",
+    }}
+  >
+    Udaiyampalayam, Coimbatore - 28
+  </p>
+
+  <div
+    style={{
+      width: "100px",
+      height: "3px",
+      background: "#D4AF37",
+      margin: "0 auto 15px",
+      borderRadius: "10px",
+    }}
+  />
+
+  <h1
+    style={{
+      margin: 0,
+      fontSize: "28px",
+      letterSpacing: "2px",
+      color: "#fff",
+    }}
+  >
+    PAYSLIP GENERATOR
+  </h1>
+
+</div>
 
       <form
         onSubmit={handleSubmit}
         style={{
-          padding: "30px",
+          padding: "20px",
         }}
       >
         {/* Employee Details */}
@@ -98,14 +147,10 @@ function EmployeeForm({ setEmployeeData }) {
         </h2>
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
-          }}
+          style={mobileGrid}
         >
           <div>
-            <label style={labelStyle}>Employee Name</label>
+            <label style={labelStyle}>ஊழியர் பெயர்</label>
             <input
               style={inputStyle}
               name="employeeName"
@@ -115,7 +160,7 @@ function EmployeeForm({ setEmployeeData }) {
           </div>
 
           <div>
-            <label style={labelStyle}>Employee ID</label>
+            <label style={labelStyle}>ஊழியர் ID</label>
             <input
               style={inputStyle}
               name="employeeId"
@@ -125,7 +170,7 @@ function EmployeeForm({ setEmployeeData }) {
           </div>
 
           <div>
-            <label style={labelStyle}>Designation</label>
+            <label style={labelStyle}>பதவி</label>
             <input
               style={inputStyle}
               name="designation"
@@ -135,7 +180,7 @@ function EmployeeForm({ setEmployeeData }) {
           </div>
 
           <div>
-            <label style={labelStyle}>Branch</label>
+            <label style={labelStyle}>பணிபுரியும் கிளை</label>
             <input
               style={inputStyle}
               name="branch"
@@ -145,7 +190,7 @@ function EmployeeForm({ setEmployeeData }) {
           </div>
 
           <div>
-            <label style={labelStyle}>Salary Month</label>
+            <label style={labelStyle}>சம்பள மாதம்</label>
             <input
               style={inputStyle}
               name="salaryMonth"
@@ -162,11 +207,7 @@ function EmployeeForm({ setEmployeeData }) {
         </h2>
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
-          }}
+         style={mobileGrid}
         >
           <div>
             <label style={labelStyle}>Basic Salary</label>
@@ -220,11 +261,7 @@ function EmployeeForm({ setEmployeeData }) {
         </h2>
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
-          }}
+         style={mobileGrid}
         >
           <div>
             <label style={labelStyle}>Advance Deduction</label>
@@ -278,11 +315,7 @@ function EmployeeForm({ setEmployeeData }) {
         </h2>
 
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "20px",
-          }}
+          style={mobileGrid}
         >
           <div>
             <label style={labelStyle}>Payment Date</label>
@@ -319,8 +352,8 @@ function EmployeeForm({ setEmployeeData }) {
             color: "white",
             border: "none",
             borderRadius: "8px",
-            fontSize: "16px",
-            fontWeight: "bold",
+            fontSize: "18px",
+            fontWeight: "18px",
             cursor: "pointer",
           }}
         >
